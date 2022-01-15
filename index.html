@@ -92,6 +92,7 @@ a {
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
   import { getFirestore } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js";
   import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-auth.js";
+  import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -123,7 +124,6 @@ signupForm.addEventListener('submit', e => {
      console.log(email, password);
     signupForm.reset();
 
-    import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const auth = getAuth();
 createUserWithEmailAndPassword(auth, email, password)
