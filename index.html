@@ -128,7 +128,7 @@ signupForm.addEventListener('submit', e => {
      console.log(email, password);
     signupForm.reset();
 
-    createUserWithEmailAndPassword(auth, email, password)
+    getAuth().createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
