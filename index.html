@@ -106,13 +106,14 @@ a {
     appId: "1:344921552460:web:a1e92e705d5819a3e3a6e9",
     measurementId: "G-NBFCWX4E78"
   };
+  
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
 
 
   const auth = getAuth();
     
-   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-
+ 
 
 // signup
 const signupForm = document.getElementById("signup-form");
