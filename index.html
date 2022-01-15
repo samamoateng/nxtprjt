@@ -110,8 +110,7 @@ a {
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
 
-  
-import { createUserWithEmailAndPassword } from "firebase/auth";
+
  
 
 // signup
@@ -124,20 +123,20 @@ signupForm.addEventListener('submit', e => {
      console.log(email, password);
     signupForm.reset();
 
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        console.log('Register success');
-        location = "home.html";
+    import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-      });
+const auth = getAuth();
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
 
 
     
