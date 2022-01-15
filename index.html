@@ -107,15 +107,15 @@ a {
     measurementId: "G-NBFCWX4E78"
   };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+ 
 
 
-  // import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+   import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
-  // const auth = getAuth();
+  const auth = getAuth();
     
-
+   // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
 
 
 // signup
@@ -128,7 +128,7 @@ signupForm.addEventListener('submit', e => {
      console.log(email, password);
     signupForm.reset();
 
-    getAuth().createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
