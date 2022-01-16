@@ -71,7 +71,7 @@ a {
 
 <form id="signup-form">
   <div class="container">
-    <h1>Register</h1>
+    <h1>Login</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
 
@@ -81,7 +81,7 @@ a {
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" id="password" required>
 
-    <button type="submit" class="registerbtn">Register</button>
+    <button type="submit" class="registerbtn">Login</button>
   </div>
   
   
@@ -125,18 +125,16 @@ signupForm.addEventListener('submit', e => {
 
 
 const auth = getAuth();
-createUserWithEmailAndPassword(auth, email, password)
+signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
-  console.log("registered");
     const user = userCredential.user;
     // ...
-  location: "home.html";
+  console.log("logged in");
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    // ..
   });
 
 
